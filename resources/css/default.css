@@ -1,0 +1,107 @@
+@font-face {
+    font-family: "Roboto";
+    src: url("./fonts/Roboto/Roboto-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Roboto-Medium";
+    src: url("./fonts/Roboto/Roboto-Medium.ttf");
+}
+
+:root {
+  --color-main: #2191FB;
+  --color-gray: #333333;
+  --color-white: #FFFFFF;
+  --font-default: "Roboto", sans-serif;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+ 	font-family: var(--font-default);
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: var(--color-white);
+}
+
+a {
+    color: var(--color-main);
+}
+
+.game {
+    display: flex;
+    flex-direction: row;
+    width: 80vh;
+    margin: 5vh auto;
+    padding: 0;
+}
+
+.board {
+    display: flex;
+    width: 40vh;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.target {
+    display: block;
+    width: 8vh;
+    height: 8vh;
+    margin: 1vh;
+    padding: 0;
+    background-color: var(--color-gray);
+}
+
+.target:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.highscore {
+    display: flex;
+    width: 40vh;
+    margin-top: 2vh;
+    padding: 1vh;
+    flex-direction: row;
+    border-style: solid;
+    border-width: 5px 0 0 0;
+    border-color: var(--color-main);
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--color-gray);
+}
+
+.highscore .label {
+    flex-basis: 50%;
+    text-align: right;
+}
+
+.highscore .value {
+    flex-basis: 50%;
+    text-align: center;
+}
+
+.info {
+    display: flex;
+    width: 40vh;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.title {
+    padding: 1vh;
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--color-main);
+}
+
+.text {
+    padding: 1vh;
+    font-size: 1.25em;
+    font-weight: bold;
+    line-height: 1.75em;   
+    color: var(--color-gray);
+}

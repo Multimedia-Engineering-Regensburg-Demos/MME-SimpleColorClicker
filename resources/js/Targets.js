@@ -5,10 +5,10 @@ class Targets {
 
     static createTargetList(numberOfTargets, deviation) {
         let randomColor = Color.getRandomColor(),
-        deviatingColor = randomColor.getDeviatingColor(deviation),
-        randomIndex = parseInt(Math.random() * numberOfTargets),
-        targets = [];
-        for(let i = 0; i < numberOfTargets; i++) {
+            deviatingColor = randomColor.getDeviatingColor(deviation),
+            randomIndex = parseInt(Math.random() * numberOfTargets),
+            targets = [];
+        for (let i = 0; i < numberOfTargets; i++) {
             let color = i !== randomIndex ? randomColor : deviatingColor;
             targets.push(createTargetElement(color));
         }

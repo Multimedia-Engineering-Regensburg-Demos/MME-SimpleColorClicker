@@ -17,9 +17,11 @@ class Color {
     }
 
     static getRandomColor() {
+        /* eslint-disable no-magic-numbers */
         let r = parseInt(Math.random()*256),
         g = parseInt(Math.random()*256),
         b = parseInt(Math.random()*256);
+        /* eslint-enable no-magic-numbers */
         return new Color(r,g,b);
     }
 

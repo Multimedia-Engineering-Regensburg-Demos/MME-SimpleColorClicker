@@ -3,11 +3,6 @@
     src: url("./fonts/Roboto/Roboto-Regular.ttf");
 }
 
-@font-face {
-    font-family: "Roboto-Medium";
-    src: url("./fonts/Roboto/Roboto-Medium.ttf");
-}
-
 :root {
   --color-main: #2191FB;
   --color-gray: #333333;
@@ -35,7 +30,7 @@ a {
     display: flex;
     flex-direction: row;
     width: 80vh;
-    margin: 5vh auto;
+    margin: 10vh auto;
     padding: 0;
 }
 
@@ -60,7 +55,7 @@ a {
     opacity: 0.8;
 }
 
-.highscore {
+.score {
     display: flex;
     width: 40vh;
     margin-top: 2vh;
@@ -74,12 +69,12 @@ a {
     color: var(--color-gray);
 }
 
-.highscore .label {
+.score .label {
     flex-basis: 50%;
     text-align: right;
 }
 
-.highscore .value {
+.score .value {
     flex-basis: 50%;
     text-align: center;
 }

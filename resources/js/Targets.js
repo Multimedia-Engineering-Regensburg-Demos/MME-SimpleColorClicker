@@ -1,5 +1,5 @@
 /* eslint-env browser */
-/* global  Color */
+/* global Color */
 
 class Targets {
 

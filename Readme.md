@@ -5,3 +5,4 @@ Informationen und eine Anleitung zur Implementierung der Demo finden Sie [hier](
 ## Download
 
 - [Lösungsvorschlag (zip-Datei)](https://github.com/Multimedia-Engineering-Regensburg-Demos/MME-SimpleColorClicker/archive/master.zip)
+- [Starterpaket (zip-Datei)](https://github.com/Multimedia-Engineering-Regensburg-Demos/MME-SimpleColorClicker/archive/starter.zip)

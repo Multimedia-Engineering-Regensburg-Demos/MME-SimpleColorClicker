@@ -1,34 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Color Clicker</title>
-    <link rel="stylesheet" href="resources/css/default.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="resources/css/style.css">
 </head>
 
 <body>
-    <div class="game">
-        <div class="board">
-            <span class="score">
-                <span class="label">Score</span>
-                <span class="value">0</span>
-            </span>
-        </div>
-        <div class="info">
-            <span class="title">
-                Color Clicker
-            </span>
-            <span class="text">
-                Links werden 16 farbige Ziele dargestellt. Eines der Ziele unterscheidet sich farblich etwas von den übrigen Elementen. Finde dieses Element und klicke es an. Für jedes korrekt identifizierte Element gibt es einen Punkt. Mit jeder Runde wird es schwieriger.<br /><br />Das Spiel ist eine neue Implementierung dieser <a href="https://gamejolt.com/games/color-picker/35110">Idee von Peter Lauris</a>.
-        </div>
-    </div>
+    <h1>Color Clicker</h1>
+    <p class="subtitle">
+        <b>Finde das Element mit der unterschiedlichen Farben!</b> (Javascript-Implementierung dieser <a href="https://gamejolt.com/games/color-picker/35110">Idee von Peter Lauris</a>)
+    </p>
+    <p class="score"></p>
+    <span class="board">
+    </span>
 
-    <script type="application/javascript" src="resources/js/Config.js"></script>
-    <script type="application/javascript" src="resources/js/Color.js"></script>
-    <script type="application/javascript" src="resources/js/Targets.js"></script>
-    <script type="application/javascript" src="resources/js/index.js"></script>
+    <script src="resources/js/Color.js"></script>
+    <script src="resources/js/Target.js"></script>
+    <script src="resources/js/index.js"></script>
 </body>
 
 </html>

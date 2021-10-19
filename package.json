@@ -1,0 +1,17 @@
+{
+    "name": "simple_color_clicker",
+    "version": "1.0.0",
+    "description": "Einfuehrung in die Grundlagen von JavaScript anhand einer Neuimplementierung des Color Picker von Peter Lauris",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "setup": "npm install",
+        "start": "node index.js"
+    },
+    "author": "Alexander Bazo & Jakob Fehle",
+    "license": "MIT",
+    "dependencies": {
+        "eslint": "^8.0.1",
+        "express": "^4.17.1"
+    }
+}

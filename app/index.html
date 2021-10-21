@@ -2,23 +2,43 @@
 <html lang="de">
 
 <head>
+    <!-- Encodings der Website -->
     <meta charset="utf-8">
+
+    <!-- Setzen des viewport-Attributs für responsives Layout der Webseite auf mobilen Endgeräten -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Titel der Webseite -->
     <title>Color Clicker</title>
+
+    <!-- Einbinden und Verwenden einer Online-zugänglichen Schriftart -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;600&display=swap" rel="stylesheet">
+
+    <!-- Einbinden der CSS-Datei -->
     <link rel="stylesheet" href="resources/css/style.css">
 </head>
 
 <body>
+    <!-- HTML-Element für Überschrift (h1-h6) -->
     <h1>Color Clicker</h1>
+
+    <!-- HTML-Element p (paragraph) für Textpassage -->
     <p class="subtitle">
-        <b>Finde das Element mit der unterschiedlichen Farben!</b> (Javascript-Implementierung dieser <a
-            href="https://gamejolt.com/games/color-picker/35110">Idee von Peter Lauris</a>)
+        <!-- HTML-Elemente b (big) für fett-markierten Text und a (anchor) für Links -->
+        <b>Finde das Element mit der unterschiedlichen Farben!</b> (Javascript-Implementierung dieser <a href="https://gamejolt.com/games/color-picker/35110">Idee von Peter Lauris</a>)
     </p>
     <p class="score"></p>
     <span class="board">
     </span>
+
+    <!-- Einbinden der JS-Dateien:
+         JS-Dateien werden in der Reihenfolge ausgeführt, in welcher sie eingebunden werden,
+         das heißt, wir müssen zuerst die Klassen einbinden, um diese im Anschluss in der index.js auch verwenden zu können. -->
+
+    <script src="resources/js/Color.js"></script>
+    <script src="resources/js/Target.js"></script>
+    <script src="resources/js/index.js"></script>
 </body>
 
 </html>

@@ -8,34 +8,41 @@
  */
 class Color {
 
-    // Konstruktor nimmt RGB-Werte als Variablen entgegen und speichert diese ab
+    /**
+     * Erzeugt ein neues Color-Objekt auf Basis der angegebenen R-,G- und B-Werte
+     */
     constructor(r, g, b) {
-        // Hinzufügen von Variablen zur Klassen-Instanz / zum Objekt über this-Keyword
+        // Speichern der Farbwerte im neuen Objekt
         this.r = r;
         this.g = g;
         this.b = b;
-
-        // Klassen-Objekt soll nicht mehr verändert werden können
+        // Verhindert das Verändern der Eigenschaften und Werte des neuen Objekts (Vgl. Immutable)
         Object.freeze(this);
     }
 
-    // Die Gestaltung von HTML-Elementen passiert im CSS, daher Umwandlung der Objekt-Variablen in einen CSS-String,
-    // um diesen inline in HTML-Elementen verwenden zu können
+    /**
+     * Gibt die im Objekt gespeicherte Farbe (intern als einzelne RGB-Kanäle gespeichert) als CSS-String zurück,
+     * der z.B. zum expliziten Setzen der entsprechenden CSS-Eigenschaft der Farbquadrate verwendet werden kann.
+     */
     toCSS() {
-        // rgb(r,g,b) als Template-String
         return `rgb(${this.r},${this.g},${this.b})`;
     }
 
-    // Erstellung einer Ziel-Farbe, basierend auf der aktuellen Farbe minus einer vorgegebenen Abweichung
+    /**
+     * Gibt ein neues Color-Objekt zurück, dessen Farbwerte (RGB) jeweils um den angegebenen Wert von denen
+     * Farbwerten des Objekts abweichen, auf dem die Methode aufgerufen wurde: Damit lässt sich eine leicht
+     * abweichende Variante der im Objekt repräsentierten Farbe erzeugen.
+     */
     getDeviatingColor(deviation) {
         return new Color(this.r - deviation, this.g - deviation, this.b -
             deviation);
     }
 
-    // Static-Methode, welche unabhängig von einer Klassen-Instanz ausgeführt werden kann 
-    // und eine zufällige Farbe als Klassen-Instanz zurück gibt.
+    /**
+     * Gibt eine neue, zufällige RGB-Farbe zurück
+     */
     static getRandomColor() {
-        let r = parseInt(Math.random() * 256),
+        let r = parseInt(Math.random() * 256), // Math.random erzeugt einen Pseudo-Zufallswert zwischen 0 (inklusive) und 1 (exklusive)
             g = parseInt(Math.random() * 256),
             b = parseInt(Math.random() * 256);
         return new Color(r, g, b);

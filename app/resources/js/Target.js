@@ -9,38 +9,41 @@
  */
 class Target {
 
-    // Konstruktor nimmt Color-Instanz und Boolean bzgl. Ziel-Status entgegen (default: false)
+    /**
+     * Erzeugt ein neues Target-Objekt, das eines der Farbquadrate im Spiel repräsentiert. Über die
+     * Parameter wird festgelegt, welche Farbe das Quadrat haben soll und ob es sich um das einzelne
+     * Zielquadrat der aktuellen Runde handelt (isTarget === true). Für den zweiten Parameter wird ein
+     * Default-Wert (isTarget = false) verwendet, da der größte Teil der Objekte mit diesem Wert 
+     * initialisiert werden wird. 
+     */
     constructor(color, isTarget = false) {
-        this.color = color; // Speichert Referenz der zum Feld zugehörigen Farbe
-        this.isTarget = isTarget; // Speichert Ziel-Status als Boolean
-
-        // Klassen-Objekt soll nicht mehr verändert werden können
+        this.color = color;
+        this.isTarget = isTarget;
+        // Verhindert das Verändern der Eigenschaften und Werte des neuen Objekts (Vgl. Immutable)
         Object.freeze(this);
     }
 
-    // Funktion zur Umwandlung des Target-Objekts inkl. Color-Objekts zum 
+    /**
+     * Erzeugt auf Basis der im Objekt gespeicherten Werte ein HTML-Objekt, das zur Darstellung
+     * des Targets im UI genutzt werden kann. 
+     */
     createNode() {
         // Erstellung eines span-HTML-Elements
         let el = document.createElement("span");
-
         // Hinzufügen einer Klasse, mit welcher alle Farbfelder angesprochen werden können
         el.classList.add("target");
-
         // Setzen der Farbe des Feldes auf die RGB-Farbe des zugewiesenen Color-Objekts
         el.style.backgroundColor = this.color.toCSS();
-
-        // Setzen des Attributes "data-is-target" bzgl. des Ziel-Status des Farbfelds
+        // Markiert im HTML-Attribut, ob es sich um das Zielquadrat handelt
         el.setAttribute("data-is-target", this.isTarget);
-
         return el;
     }
 
-    /* Static-Methode, welche unabhängig von einer Klassen-Instanz ausgeführt werden kann 
-     *  und eine vorgegebene Anzahl an Farbfeldern mit einheitlicher Grund-Farbe sowie ein Farbfeld mit der Ziel-Farbe enthält
-     *  
-     *  Parameter:
-     *  numberOfTargets: Anzahl der Farbfelder auf dem Spiel-Board
-     *  deviation: Aktuelle Abweichung der Grund-Farbe zur Ziel-Farbe
+
+    /**
+     * Gibt eine zufällige Liste an Target-Objekten für eine Spielrunde zurück. Die Anzahl der Quadrate und die numerische 
+     * Farbabweichung des Zielquadrats werden als Parameter übergeben. Innerhalb der Methode werden zufällig die zu verwendende 
+     * Grundfarbe sowie die Position des Zielquadrats bestimmt.
      */
     static createRandomTargetList(numberOfTargets, deviation) {
         let randomColor = Color.getRandomColor(), //Erstellen einer zufälligen Farbe
@@ -51,12 +54,11 @@ class Target {
         for (let i = 0; i < numberOfTargets; i++) {
             // Überprüfung, ob der aktuelle Durchlauf der Schleife der Position der Ziel-Farbe entspricht
             let color = i !== randomIndex ? randomColor : deviatingColor;
-
             // Hinzufügen eines neuen Farbfeldes zum Array inkl. Setzen des Ziel-Status
             if (i !== randomIndex) {
-                targets.push(new Target(color));
+                targets.push(new Target(color)); // "Normales" Farbquadrat
             } else {
-                targets.push(new Target(color, true));
+                targets.push(new Target(color, true)); // Ziel der aktuellen Runde
             }
         }
         return targets;
